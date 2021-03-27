@@ -1,0 +1,20 @@
+.question1 {
+    text-align: center;
+    margin-top: 300px;
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: block;
+}
+
+.question2 {
+    position: absolute;
+    margin-top: -90px;
+    text-align: center;
+    margin-left: 44%;
+}
+
