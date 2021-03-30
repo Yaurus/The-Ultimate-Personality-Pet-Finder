@@ -4,3 +4,4 @@ var startBtn = $("startBtn")
 function start() {
     window.location.href = "file:///C:/Users/Stephan/Pictures/Course/The-Ultimate-Personality-Pet-Finder/quiz.html";
 }
+
