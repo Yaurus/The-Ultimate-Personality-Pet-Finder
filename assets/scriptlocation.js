@@ -2,6 +2,7 @@
 var button = document.getElementById("button");
 
 var locationValue = [];
+var postalValue =[];
 var lat = [];
 var lon = []; 
 
@@ -17,6 +18,8 @@ button.addEventListener("click", function(){
     console.log(postCode); 
     locationValue.push(search);
     localStorage.setItem("location", JSON.stringify(locationValue));
+    postalValue.push(postCode);
+    localStorage.setItem("post", JSON.stringify(postalValue));
     console.log(locationValue);
     geoCodeApi();
 });
