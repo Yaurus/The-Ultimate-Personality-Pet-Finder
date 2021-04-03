@@ -19,6 +19,9 @@ var question1Btnyes = $(".yes")
 var question1 = $(".question1");
 var question2 = $(".question2");
 
+
+
+
 //stores yes answers into console for Q1
 function Yesanswer1 () {
     var yes = document.querySelector(".yes").value;
@@ -46,7 +49,8 @@ function Yesanswer2() {
     localStorage.setItem("numbervalue", document.getElementsByClassName("yes2").value)
     console.log(localStorage.getItem(".yes2"));
     $(".question2").hide();
-    // $(".question2").addClass("shown");
+    window.location.href = "file:///C:/Users/Stephan/Pictures/Course/The-Ultimate-Personality-Pet-Finder/location.html";
+    $(".question2").addClass("shown");
 }
 
 
@@ -57,7 +61,8 @@ function Noanswer2() {
     localStorage.setItem("numbervalue", document.getElementsByClassName("no2").value)
     console.log(localStorage.getItem("no2"));
     $(".question2").hide();
-    // $(".question2").addClass("shown");
+        window.location.href = "file:///C:/Users/Stephan/Pictures/Course/The-Ultimate-Personality-Pet-Finder/location.html";
+    $(".question2").addClass("shown");
 }
 
 

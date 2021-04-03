@@ -4,7 +4,18 @@ var button = document.getElementById("button");
 var locationValue = [];
 var postalValue =[];
 var lat = [];
-var lon = []; 
+var lon = [];
+
+//retrieve local storage
+var yes1value = localStorage.getItem("yes1");
+console.log(yes1value);
+var no1value = localStorage.getItem("no");
+console.log(no1value);
+var yes2value = localStorage.getItem(".yes2");
+console.log(yes2value);
+var no2value = localStorage.getItem("no2");
+console.log(no2value);
+
 
 
 //Event listener on the button
