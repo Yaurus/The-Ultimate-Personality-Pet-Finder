@@ -1,3 +1,6 @@
+// A very helpful artical about connecting the pet finder api
+// https://gomakethings.com/how-to-make-multiple-fetch-calls-with-the-same-oauth-token-in-vanilla-js/
+
 var apiKey = 'LWxSqYatdplE3OeXhPTKjm1PHsfDDVflXSPguuUtViYdrQMY1c'; // assign our key to a variable, easier to read
 var secret = "kWGAVp8RvLCQqmYSGVA9danmtZydlMw6CufLt6CR";
 var fetchPets = "https://api.petfinder.com/v2/types/dogs?location=midland,l0k2a0&age=adult&limit=4&good_with_children=1&good_with_dogs=1&good_with_cats=0special_needs=1" 
