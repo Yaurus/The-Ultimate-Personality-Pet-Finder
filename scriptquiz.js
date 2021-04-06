@@ -19,40 +19,38 @@
 
 
 //stores yes answers into console for Q1
-function question1 () {
-if ($(".response").val = 1) {
-    var hasLargeApartment = true;
+function question1 (answer) {
+    console.log(answer)
+if (parseInt(answer) === 1) {
+    var hasDog = true;
 
 } else {
-    var hasLargeApartment = false;
-}
-console.log($(".response").val());
-    localStorage.setItem("haslargeapartment", hasLargeApartment); 
-    console.log(localStorage.getItem("haslargeapartment"));
-    $(".question1").hide();
-    $(".question2").addClass("shown");
+    var hasDog = false;
 }
 
-// //stores no answers into console for Q1
-// function Noanswer1 () {
-   
-//     var no = document.querySelector(".no").value;
-//     localStorage.setItem("no1", no); 
-//     localStorage.setItem("numbervalue", document.getElementsByClassName("no").value)
-//     console.log(localStorage.getItem("no1"));
-//     $(".question1").hide();
-//     $(".question2").addClass("shown");
-// }
+localStorage.setItem("hasdog", hasDog); 
+console.log(localStorage.getItem("hasdog"));
+$(".question1").hide();
+$(".question2").addClass("shown");
+}
 
 //stores yes answers into console for question2
-function Yesanswer2() {
-    var hasBackyard = true;
-    localStorage.setItem("hasBackyard", hasBackyard); 
-    console.log(localStorage.getItem("hasBackyard"));
-    $(".question2").hide();
-    window.location.href = "file:///C:/Users/Stephan/Pictures/Course/The-Ultimate-Personality-Pet-Finder/location.html";
-    $(".question2").addClass("shown");
+function question2 (answer) {
+    console.log(answer)
+if (parseInt(answer) === 1) {
+    var hasCat = true;
+
+} else {
+    var hasCat = false;
 }
+
+localStorage.setItem("hascat", hasCat); 
+console.log(localStorage.getItem("hascat"));
+window.location.href = "file:///C:/Users/Stephan/Pictures/Course/The-Ultimate-Personality-Pet-Finder/location.html";
+
+}
+    
+    
 
 
 // //hides question 2 when answered (step should go to location finder sheet)

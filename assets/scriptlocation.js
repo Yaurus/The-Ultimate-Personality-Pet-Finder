@@ -7,24 +7,24 @@ var lat = [];
 var lon = [];
 
 //retrieve local storage
-var hasBackyard = localStorage.getItem("hasBackyard")
-var hasLargeApartment = localStorage.getItem("haslargeapartment")
+var hasDog = localStorage.getItem("hasdog")
+var hasCat = localStorage.getItem("hascat")
 
 
 
 
-if (hasLargeApartment) {
-  console.log("Has large Apartment: True")
+if (hasDog === "true") {
+  console.log("Has Dog: True");
 }
 else {
-  console.log("Has large Apartment: False");
+  console.log("Has Dog: False");
 }
 
-if (hasBackyard) {
-  console.log("Has Backyard: True")
+if (hasCat === "true") {
+  console.log("Has Cat: True");
 }
 else {
-  console.log("Has Backyard: False");
+  console.log("Has Dog: False");
 }
 
 
