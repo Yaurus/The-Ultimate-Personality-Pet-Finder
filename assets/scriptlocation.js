@@ -7,14 +7,27 @@ var lat = [];
 var lon = [];
 
 //retrieve local storage
-var yes1value = localStorage.getItem("yes1");
-console.log(yes1value);
-var no1value = localStorage.getItem("no");
-console.log(no1value);
-var yes2value = localStorage.getItem(".yes2");
-console.log(yes2value);
-var no2value = localStorage.getItem("no2");
-console.log(no2value);
+var hasBackyard = localStorage.getItem("hasBackyard")
+var hasLargeApartment = localStorage.getItem("haslargeapartment")
+
+
+
+
+if (hasLargeApartment) {
+  console.log("Has large Apartment: True")
+}
+else {
+  console.log("Has large Apartment: False");
+}
+
+if (hasBackyard) {
+  console.log("Has Backyard: True")
+}
+else {
+  console.log("Has Backyard: False");
+}
+
+
 
 
 
@@ -72,6 +85,7 @@ function callLocation() {
   var locationApi = "https://api.geoapify.com/v2/places?categories=pet&filter=circle:" + lat + "," + lon + ",20000&limit=20&apiKey=3b4a9f7da30e4c01940be99d78ea8f34";
   //var locationApi  = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +lat +"," + lon+ "&radius=1500&type=animal_shelter&key=AIzaSyAsS5MK-sagl9FEdNRBtmu1OzFlAmZBV3Y"
 
+
   fetch(locationApi)
        .then(function (response) {
           if (response.ok) {
@@ -83,7 +97,8 @@ function callLocation() {
         .catch(function () {
           console.log('Unable to connect'); 
         }); 
-      }
+      };
+     
 
 
 // link to places https://api.geoapify.com/v2/places
@@ -96,5 +111,5 @@ function callLocation() {
 
 // Plan I need to change the location api becuase I couldn't get the google place one to work. 
 // I am now using the geopify api to find stuff and it works.
-// I have the geocodeing api take a given postalcode and a city and return one result with the lat and lon values
+// I have the geocodeing api take a given postalcode and a city and return one result with the lat and lon values,
 // My goal is now to get those two values and use them in the place finding api to get locations in the area.
