@@ -39,7 +39,7 @@ function geoCodeApi(){
               //gets the latitude and lonitiude of the location and sets them to local storage so they can be used later.
               localStorage.setItem("latValue", JSON.stringify(data.features[0].geometry.coordinates[0]));
               localStorage.setItem("lonValue", JSON.stringify(data.features[0].geometry.coordinates[1]));
-              //window.location.href = "X"
+              window.location.href = "results.html"
               });
             }
           })
