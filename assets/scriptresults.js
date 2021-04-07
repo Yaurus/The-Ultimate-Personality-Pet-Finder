@@ -17,6 +17,7 @@ var hasRadi = localStorage.getItem("radius")
 var hasPost = localStorage.getItem("post")
 var hasCity = localStorage.getItem("location")
 
+
 console.log(hasDog);
 console.log(hasCat);
 console.log(hasLat);
@@ -24,6 +25,7 @@ console.log(hasLon);
 console.log(hasRadi);
 console.log(hasPost);
 console.log(hasCity);
+
 
 
 
@@ -74,10 +76,16 @@ fetch("https://api.petfinder.com/v2/oauth2/token", {
 
 })
 
+//not working values
+//&distance=${radius} need to turn it into a number
+// ,${hasCity},${hasLat},${hasLon} dosn't like this
+//&good_with_dogs=${hasDog}
+// &distance=${radius}
 
 function getPets() {    
+    var radius = parseInt(hasRadi);
     if (hasCity.length > 0) {
-        return fetch(`https://api.petfinder.com/v2/animals?location=${hasPost}&good_with_cats=${hasCat}`, {
+        return fetch("https://api.petfinder.com/v2/animals/?limit=4&location=" + hasPost + "&good_with_cats=" + hasCat, {
             headers: {
                 "Authorization": tokenType + " " + token,
                 "content-type": "application/x-www-form-urlencoded"
