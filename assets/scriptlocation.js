@@ -2,30 +2,11 @@
 var button = document.getElementById("button");
 
 var locationValue = [];
-var postalValue =[];
-var lat = [];
-var lon = [];
-
-//retrieve local storage
-var hasDog = localStorage.getItem("hasdog")
-var hasCat = localStorage.getItem("hascat")
+var postalValue;
+var lat;
+var lon;
 
 
-
-
-if (hasDog === "true") {
-  console.log("Has Dog: True");
-}
-else {
-  console.log("Has Dog: False");
-}
-
-if (hasCat === "true") {
-  console.log("Has Cat: True");
-}
-else {
-  console.log("Has Dog: False");
-}
 
 
 
@@ -42,10 +23,8 @@ button.addEventListener("click", function(){
     console.log(search); 
     console.log(postCode); 
     console.log(searchRadius);
-    locationValue.push(search);
-    localStorage.setItem("location", JSON.stringify(locationValue));
-    postalValue.push(postCode);
-    localStorage.setItem("post", JSON.stringify(postalValue));
+    localStorage.setItem("location", JSON.stringify(search));
+    localStorage.setItem("post", JSON.stringify(postCode));
     localStorage.setItem("radius", JSON.stringify(searchRadius));
     geoCodeApi();
 });
