@@ -21,6 +21,7 @@ var hasLon = JSON.parse(localStorage.getItem("lonValue"))
 var hasRadi = JSON.parse(localStorage.getItem("radius"))
 var hasPost = JSON.parse(localStorage.getItem("post"))
 var hasCity = JSON.parse(localStorage.getItem("location"))
+var staOrPro = JSON.parse(localStorage.getItem("Staorpro"))
 
 
 console.log(hasDog);
@@ -30,6 +31,7 @@ console.log(hasLon);
 console.log(hasRadi);
 console.log(hasPost);
 console.log(hasCity);
+console.log(staOrPro);
 
 
 
@@ -87,10 +89,12 @@ fetch("https://api.petfinder.com/v2/oauth2/token", {
 //&good_with_dogs=${hasDog}
 // &distance=${radius}
 
+//"https://api.petfinder.com/v2/animals/?limit=4&location=" + hasCity + "," + staOrPro + ";" + hasLat + "," + hasLon +  ";&good_with_cats=" + hasDog + "&good_with_dogs=" + hasDog
+
 function getPets() {    
     var radius = parseInt(hasRadi);
     if (hasCity.length > 0) {
-        return fetch("https://api.petfinder.com/v2/animals/?limit=4&location=" + hasPost + "&good_with_cats=" + hasDog + "&good_with_dogs=" + hasDog, {
+        return fetch("https://api.petfinder.com/v2/animals/?limit=4&location=" + hasPost + "&distance=" + hasRadi + "&good_with_cats=" + hasDog + "&good_with_dogs=" + hasDog + "&good_with_children=" + hasCat, {
             headers: {
                 "Authorization": tokenType + " " + token,
                 "content-type": "application/x-www-form-urlencoded"

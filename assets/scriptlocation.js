@@ -17,6 +17,7 @@ button.addEventListener("click", function(){
     //gets the value of the imput bar
     var search = document.getElementById("search").value;
     var postCode = document.getElementById("searchtwo").value;
+    var staOrPro = document.getElementById("searchthree").value
     var searchRadius = document.getElementById("radius").value;
     
     console.log("A button was clicked")
@@ -25,6 +26,7 @@ button.addEventListener("click", function(){
     console.log(searchRadius);
     localStorage.setItem("location", JSON.stringify(search));
     localStorage.setItem("post", JSON.stringify(postCode));
+    localStorage.setItem("Staorpro", JSON.stringify(staOrPro));
     localStorage.setItem("radius", JSON.stringify(searchRadius));
     geoCodeApi();
 });
