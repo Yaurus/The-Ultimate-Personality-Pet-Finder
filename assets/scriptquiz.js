@@ -46,8 +46,39 @@ if (parseInt(answer) === 1) {
 
 localStorage.setItem("hascat", hasCat); 
 console.log(localStorage.getItem("hascat"));
-window.location.href = "location.html";
+// window.location.href = "location.html";
+}
 
+
+//stores answers into console for Q3
+function question3 (answer) {
+    console.log(answer)
+if (parseInt(answer) === 1) {
+    var hasOld = [
+        "adult", "senior"
+    ]
+} else {
+    var hasOld = [
+        "baby","young"]    
+}
+localStorage.setItem("hasold", hasOld); 
+console.log(localStorage.getItem("hasold"));
+$(".question3").hide();
+}
+//baby, young. Adult, senior
+
+//stores answers into console for Q4
+function question4 (answer) {
+    console.log(answer)
+if (parseInt(answer) === 1) {
+    var hasSpecialneeds = true;
+} else {
+    var hasSpecialneeds = false;
+}
+localStorage.setItem("hasspecialneeds", hasSpecialneeds); 
+console.log(localStorage.getItem("hasspecialneeds"));
+$(".question4").hide();
+window.location.href = "location.html";
 }
     
     
