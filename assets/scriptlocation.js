@@ -3,6 +3,7 @@ var button = document.getElementById("button");
 
 var locationValue = [];
 var postalValue =[];
+<<<<<<< HEAD
 var lat = [];
 var lon = [];
 
@@ -28,6 +29,8 @@ else {
 }
 
 
+=======
+>>>>>>> jodi
 
 
 
@@ -36,15 +39,17 @@ button.addEventListener("click", function(){
     //gets the value of the imput bar
     var search = document.getElementById("search").value;
     var postCode = document.getElementById("searchtwo").value;
+    var searchRadius = document.getElementById("radius").value;
     
     console.log("A button was clicked")
     console.log(search); 
     console.log(postCode); 
+    console.log(searchRadius);
     locationValue.push(search);
     localStorage.setItem("location", JSON.stringify(locationValue));
     postalValue.push(postCode);
     localStorage.setItem("post", JSON.stringify(postalValue));
-    console.log(locationValue);
+    localStorage.setItem("radius", JSON.stringify(searchRadius));
     geoCodeApi();
 });
 
@@ -53,18 +58,16 @@ function geoCodeApi(){
     var city = document.getElementById("search").value.trim();
     var postalCode = document.getElementById("searchtwo").value.trim();
     var geoCode = "https://api.geoapify.com/v1/geocode/search?text=%20" + city + "%20" + postalCode + "&limit=1&apiKey=3b4a9f7da30e4c01940be99d78ea8f34";
-    console.log(city);
-    console.log(postalCode);
 
     fetch(geoCode)
          .then(function (response) {
             if (response.ok) {
               response.json().then(function (data) {
               console.log(data)
-              //gets the latitude and lonitiude of the location. and push them into an array 
-              lat.push(data.features[0].geometry.coordinates[0]);
-              lon.push(data.features[0].geometry.coordinates[1]);
-              callLocation ();
+              //gets the latitude and lonitiude of the location and sets them to local storage so they can be used later.
+              localStorage.setItem("latValue", JSON.stringify(data.features[0].geometry.coordinates[0]));
+              localStorage.setItem("lonValue", JSON.stringify(data.features[0].geometry.coordinates[1]));
+              window.location.href = "results.html"
               });
             }
           })
@@ -72,10 +75,9 @@ function geoCodeApi(){
             console.log('Unable to connect');
             
           }); 
-          console.log(lat);
-          console.log(lon);
 }
 
+<<<<<<< HEAD
 
 
 
@@ -101,6 +103,8 @@ function callLocation() {
      
 
 
+=======
+>>>>>>> jodi
 // link to places https://api.geoapify.com/v2/places
 
 // link to geo codeing "https://api.geoapify.com/v1/geocode/search?text=%20Westminster&apiKey=3b4a9f7da30e4c01940be99d78ea8f34"
