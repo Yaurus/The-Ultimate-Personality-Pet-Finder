@@ -125,7 +125,8 @@ function callApi() {
 
 function buildPetBox() {
     var petsHere = document.getElementById("petsSection")
-    console.log(petsHere)
+    console.log(petsHere);
+    console.log(petData.data[0].url)
     
     for (var i = 0; i < 4; i++) {
         var elements = petData.data[i];
@@ -149,7 +150,7 @@ function buildPetBox() {
     // //link to pet page
     var petLinkBtn = document.createElement("button")
     petLinkBtn.classList.add("petLinkBtn")
-    petLinkBtn.textContent = "View Pet "
+    petLinkBtn.textContent = "View Pet"
     petLinkBtn.setAttribute("src", petData.data[i].url);
     
 
