@@ -12,10 +12,10 @@ var token, tokenType, expires;
 
 
 
-submitted.addEventListener("click", function(){
-    event.preventDefault()
-    console.log("a button was clicked")
-})
+// submitted.addEventListener("click", function(){
+//     event.preventDefault()
+//     console.log("a button was clicked")
+// })
 
 
 fetch("https://api.petfinder.com/v2/oauth2/token", {

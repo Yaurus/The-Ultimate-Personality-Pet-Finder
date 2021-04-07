@@ -32,7 +32,7 @@ localStorage.setItem("hasdog", hasDog);
 console.log(localStorage.getItem("hasdog"));
 $(".question1").hide();
 $(".question2").addClass("shown");
-}
+};
 
 //stores yes answers into console for question2
 function question2 (answer) {
@@ -46,7 +46,7 @@ if (parseInt(answer) === 1) {
 
 localStorage.setItem("hascat", hasCat); 
 console.log(localStorage.getItem("hascat"));
-window.location.href = "file:///C:/Users/Stephan/Pictures/Course/The-Ultimate-Personality-Pet-Finder/location.html";
+window.location.href = "location.html";
 
 }
     

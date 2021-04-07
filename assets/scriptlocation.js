@@ -3,7 +3,6 @@ var button = document.getElementById("button");
 
 var locationValue = [];
 var postalValue =[];
-<<<<<<< HEAD
 var lat = [];
 var lon = [];
 
@@ -29,8 +28,6 @@ else {
 }
 
 
-=======
->>>>>>> jodi
 
 
 
@@ -77,7 +74,6 @@ function geoCodeApi(){
           }); 
 }
 
-<<<<<<< HEAD
 
 
 
@@ -103,8 +99,6 @@ function callLocation() {
      
 
 
-=======
->>>>>>> jodi
 // link to places https://api.geoapify.com/v2/places
 
 // link to geo codeing "https://api.geoapify.com/v1/geocode/search?text=%20Westminster&apiKey=3b4a9f7da30e4c01940be99d78ea8f34"
