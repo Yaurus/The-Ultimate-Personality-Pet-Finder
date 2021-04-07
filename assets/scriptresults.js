@@ -9,13 +9,18 @@ var fetchPets = "https://api.petfinder.com/v2/types/dogs?location=midland,l0k2a0
 
 
 //retrieve local storage
-var hasDog = JSON.parse(localStorage.getItem("hasdog"))
-var hasCat = JSON.parse(localStorage.getItem("hascat"))
-var hasLat = localStorage.getItem("latValue")
-var hasLon = localStorage.getItem("lonValue")
-var hasRadi = localStorage.getItem("radius")
+//pet based values
+var hasDog = JSON.parse(localStorage.getItem("hasdog")) // for both dogs and cats
+var hasCat = JSON.parse(localStorage.getItem("hascat")) // for children
+var hasSpecialneeds = JSON.parse(localStorage.getItem("hasspecialneeds"))
+var hasAge = JSON.parse(localStorage.getItem("hasage"))
+
+// Location based Values
+var hasLat = JSON.parse(localStorage.getItem("latValue"))
+var hasLon = JSON.parse(localStorage.getItem("lonValue"))
+var hasRadi = JSON.parse(localStorage.getItem("radius"))
 var hasPost = JSON.parse(localStorage.getItem("post"))
-var hasCity = localStorage.getItem("location")
+var hasCity = JSON.parse(localStorage.getItem("location"))
 
 
 console.log(hasDog);
@@ -85,7 +90,7 @@ fetch("https://api.petfinder.com/v2/oauth2/token", {
 function getPets() {    
     var radius = parseInt(hasRadi);
     if (hasCity.length > 0) {
-        return fetch("https://api.petfinder.com/v2/animals/?limit=4&location=" + hasPost + "&good_with_cats=" + hasCat, {
+        return fetch("https://api.petfinder.com/v2/animals/?limit=4&location=" + hasPost + "&good_with_cats=" + hasDog + "&good_with_dogs=" + hasDog, {
             headers: {
                 "Authorization": tokenType + " " + token,
                 "content-type": "application/x-www-form-urlencoded"
