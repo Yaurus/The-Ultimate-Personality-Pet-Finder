@@ -33,6 +33,7 @@ console.log(hasPost);
 console.log(hasCity);
 console.log(staOrPro);
 
+var petData = {};
 
 
 
@@ -103,6 +104,9 @@ function getPets() {
             return response.json();
         }).then(function (data) {
             console.log("pets", data);
+            petData.data = data.animals;
+            console.log(petData)
+            buildPetBox();
         })
     }
 };
@@ -115,3 +119,47 @@ function callApi() {
     }
     return;
 }
+
+//Build elemts for displaying pets data.
+// info to provide: pet image, pet name, pet description, url with a button to link to pets page.  
+
+function buildPetBox() {
+    var petsHere = document.getElementById("petsSection")
+    console.log(petsHere)
+    
+    for (var i = 0; i < 4; i++) {
+        var elements = petData.data[i];
+        console.log(elements);
+
+    // creates an element for the info to sit in
+    var petBlock = document.createElement("div")
+    petBlock.classList.add("petBlock") 
+    // creates an image tag
+    var petPic = document.createElement("img")
+    petPic.classList.add("PetPic")
+    petPic.setAttribute("src", petData.data[i].primary_photo_cropped.small);
+    // create a tag for the pets name
+    var petName = document.createElement("h3")
+    petName.classList.add("petName")
+    petName.textContent = petData.data[i].name;
+    //creates a tag for pet description
+    var petDes = document.createElement("p")
+    petDes.classList.add("petDes")
+    petDes.textContent = petData.data[i].description
+    // //link to pet page
+    var petLinkBtn = document.createElement("button")
+    petLinkBtn.classList.add("petLinkBtn")
+    petLinkBtn.textContent = "View Pet "
+    petLinkBtn.setAttribute("src", petData.data[i].url);
+    
+
+
+    //append children to the pest here section
+    petsHere.appendChild(petBlock)
+    petBlock.appendChild(petPic)
+    petBlock.appendChild(petName)
+    petBlock.appendChild(petDes)
+    petBlock.appendChild(petLinkBtn)
+    
+    }
+};
