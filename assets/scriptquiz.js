@@ -46,6 +46,8 @@ if (parseInt(answer) === 1) {
 
 localStorage.setItem("hascat", hasCat); 
 console.log(localStorage.getItem("hascat"));
+$(".question2").hide();
+$(".question3").addClass("shown");
 // window.location.href = "location.html";
 }
 
@@ -64,6 +66,7 @@ if (parseInt(answer) === 1) {
 localStorage.setItem("hasold", hasOld); 
 console.log(localStorage.getItem("hasold"));
 $(".question3").hide();
+$(".question4").addClass("shown");
 }
 //baby, young. Adult, senior
 
