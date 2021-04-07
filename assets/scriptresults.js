@@ -9,12 +9,12 @@ var fetchPets = "https://api.petfinder.com/v2/types/dogs?location=midland,l0k2a0
 
 
 //retrieve local storage
-var hasDog = localStorage.getItem("hasdog")
-var hasCat = localStorage.getItem("hascat")
+var hasDog = JSON.parse(localStorage.getItem("hasdog"))
+var hasCat = JSON.parse(localStorage.getItem("hascat"))
 var hasLat = localStorage.getItem("latValue")
 var hasLon = localStorage.getItem("lonValue")
 var hasRadi = localStorage.getItem("radius")
-var hasPost = localStorage.getItem("post")
+var hasPost = JSON.parse(localStorage.getItem("post"))
 var hasCity = localStorage.getItem("location")
 
 
