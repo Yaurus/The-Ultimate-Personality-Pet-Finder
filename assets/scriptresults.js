@@ -115,6 +115,10 @@ function buildPetBox() {
     // creates an image tag
     var petPic = document.createElement("img")
     petPic.classList.add("PetPic")
+    var checkPic = petData.data[i].primary_photo_cropped
+    if (checkPic.length = 0){
+        console.log("No Image")     
+    }
     petPic.setAttribute("src", petData.data[i].primary_photo_cropped.small);
     // create a tag for the pets name
     var petName = document.createElement("h3")
