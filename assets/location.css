@@ -36,6 +36,9 @@ select{
 .btnsection {
     display: grid;
 }
+.redbackground {
+    background-color: red;
+}
 button {
    margin: auto;
     border-radius: 20px;
