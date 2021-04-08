@@ -5,6 +5,8 @@ var locationValue = [];
 var postalValue;
 var lat;
 var lon;
+var form = document.getElementById("#search");
+var form2 = document.getElementById("#searchtwo");
 
 
 
@@ -14,6 +16,13 @@ var lon;
 
 //Event listener on the button
 button.addEventListener("click", function(){
+  // if (form.value.length <= 0) {
+  //   // alert("Please Enter a City and Postal Code");
+  //   form.classList.add("redbackground")       
+  // }
+  // else if (form2.value.length <= 0) {
+  //   form2.classList.add("redbackground")
+  // } else {
     //gets the value of the imput bar
     var search = document.getElementById("search").value;
     var postCode = document.getElementById("searchtwo").value;
@@ -27,6 +36,7 @@ button.addEventListener("click", function(){
     localStorage.setItem("post", JSON.stringify(postCode));
     localStorage.setItem("radius", JSON.stringify(searchRadius));
     geoCodeApi();
+//}
 });
 
 //under here will call the geo code api. It will push a lat and lon value into an array.

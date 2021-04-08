@@ -115,11 +115,12 @@ function buildPetBox() {
     // creates an image tag
     var petPic = document.createElement("img")
     petPic.classList.add("PetPic")
-    var checkPic = petData.data[i].primary_photo_cropped
-    if (checkPic.length = 0){
-        console.log("No Image")     
+   // Need a way to make sure if a pet dosen't have a photo it will not break the function
+        if (petData.data[i].primary_photo_cropped){
+            petPic.setAttribute("src", petData.data[i].primary_photo_cropped.small);
+        } else {
+        petPic.setAttribute("src", "")
     }
-    petPic.setAttribute("src", petData.data[i].primary_photo_cropped.small);
     // create a tag for the pets name
     var petName = document.createElement("h3")
     petName.classList.add("petName")
@@ -129,7 +130,7 @@ function buildPetBox() {
     petDes.classList.add("petDes")
     petDes.textContent = petData.data[i].description
     // //link to pet page
-    var petLinkBtn = document.createElement("button")
+    var petLinkBtn = document.createElement("a")
     petLinkBtn.classList.add("petLinkBtn")
     petLinkBtn.textContent = "View Pet"
     petLinkBtn.setAttribute("href", petData.data[i].url);
