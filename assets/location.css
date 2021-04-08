@@ -1,7 +1,7 @@
 body{
     width: 100%;
-    background: green;
     text-align: center;
+    background-image: linear-gradient(rgb(1, 162, 255), rgb(0, 183, 255));
 }
 
 label{
@@ -27,4 +27,5 @@ button {
     color: white;
     background-image: linear-gradient(rgb(111, 0, 255), rgb(0, 47, 255));
     display: block;
+    text-align: center;
 }
