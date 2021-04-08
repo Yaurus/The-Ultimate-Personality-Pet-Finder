@@ -128,7 +128,7 @@ function buildPetBox() {
     var petLinkBtn = document.createElement("button")
     petLinkBtn.classList.add("petLinkBtn")
     petLinkBtn.textContent = "View Pet"
-    petLinkBtn.setAttribute("src", petData.data[i].url);
+    petLinkBtn.setAttribute("href", petData.data[i].url);
     
 
 
