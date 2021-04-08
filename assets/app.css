@@ -19,17 +19,24 @@ body {
     margin: 0;
     background-image: linear-gradient(rgb(1, 162, 255), rgb(0, 183, 255));
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    display: grid;
   
   }
 
   h1{
     display: block;
-    width: 50%;
+    width: 100%;
     color: white;
   }
 
 .petBlock {
-  margin: 20px;
+  margin-bottom: 20px;
+}
+
+.petPic{
+  margin-top: 20px;
+  width: 300px;
 }
 
 .petName{
@@ -51,3 +58,4 @@ body {
   background-image: linear-gradient(rgb(111, 0, 255), rgb(0, 47, 255));
 }
 
+.coolButton

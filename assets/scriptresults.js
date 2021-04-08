@@ -114,12 +114,12 @@ function buildPetBox() {
     petBlock.classList.add("petBlock") 
     // creates an image tag
     var petPic = document.createElement("img")
-    petPic.classList.add("PetPic")
+    petPic.classList.add("petPic")
    // Need a way to make sure if a pet dosen't have a photo it will not break the function
         if (petData.data[i].primary_photo_cropped){
             petPic.setAttribute("src", petData.data[i].primary_photo_cropped.small);
         } else {
-        petPic.setAttribute("src", "")
+        petPic.setAttribute("src", "https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg")
     }
     // create a tag for the pets name
     var petName = document.createElement("h3")
