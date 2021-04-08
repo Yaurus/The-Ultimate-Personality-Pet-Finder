@@ -1,6 +1,6 @@
 body {
     background-image: url("https://wallpaperaccess.com/full/266689.jpg"); 
-    background-size: cover;;
+    background-size: cover;
 }
 .opensection {
     background: #000000b4;
@@ -46,4 +46,6 @@ body {
 h1 {
     padding-top: 200px;
     color: white;
+}
+
 }
