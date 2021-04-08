@@ -36,33 +36,10 @@ console.log(staOrPro);
 var petData = {};
 
 
-
-
-// if (hasDog === "true") {
-//   console.log("Has Dog: True");
-// }
-// else {
-//   console.log("Has Dog: False");
-// }
-
-// if (hasCat === "true") {
-//   console.log("Has Cat: True");
-// }
-// else {
-//   console.log("Has Dog: False");
-// }
-
-
 var submitted = document.getElementById("submitZip")
 //tokens and stuff
 var token, tokenType, expires;
 
-
-
-// submitted.addEventListener("click", function(){
-//     event.preventDefault()
-//     console.log("a button was clicked")
-// })
 
 
 fetch("https://api.petfinder.com/v2/oauth2/token", {
