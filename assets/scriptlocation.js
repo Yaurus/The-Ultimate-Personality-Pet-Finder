@@ -2,7 +2,13 @@
 var button = document.getElementById("button");
 
 var locationValue = [];
-var postalValue =[];
+var postalValue;
+var lat;
+var lon;
+
+
+
+
 
 
 
@@ -17,10 +23,8 @@ button.addEventListener("click", function(){
     console.log(search); 
     console.log(postCode); 
     console.log(searchRadius);
-    locationValue.push(search);
-    localStorage.setItem("location", JSON.stringify(locationValue));
-    postalValue.push(postCode);
-    localStorage.setItem("post", JSON.stringify(postalValue));
+    localStorage.setItem("location", JSON.stringify(search));
+    localStorage.setItem("post", JSON.stringify(postCode));
     localStorage.setItem("radius", JSON.stringify(searchRadius));
     geoCodeApi();
 });
@@ -49,6 +53,31 @@ function geoCodeApi(){
           }); 
 }
 
+
+
+
+// finction to call the places api to look up places that are related to pets
+// I need a way to make it so it only runs after the geocodeapi has returned the data.
+function callLocation() {
+  var locationApi = "https://api.geoapify.com/v2/places?categories=pet&filter=circle:" + lat + "," + lon + ",20000&limit=20&apiKey=3b4a9f7da30e4c01940be99d78ea8f34";
+  //var locationApi  = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +lat +"," + lon+ "&radius=1500&type=animal_shelter&key=AIzaSyAsS5MK-sagl9FEdNRBtmu1OzFlAmZBV3Y"
+
+
+  fetch(locationApi)
+       .then(function (response) {
+          if (response.ok) {
+            response.json().then(function (data) {
+            console.log(data)
+            });
+          }
+        })
+        .catch(function () {
+          console.log('Unable to connect'); 
+        }); 
+      };
+     
+
+
 // link to places https://api.geoapify.com/v2/places
 
 // link to geo codeing "https://api.geoapify.com/v1/geocode/search?text=%20Westminster&apiKey=3b4a9f7da30e4c01940be99d78ea8f34"
@@ -59,5 +88,5 @@ function geoCodeApi(){
 
 // Plan I need to change the location api becuase I couldn't get the google place one to work. 
 // I am now using the geopify api to find stuff and it works.
-// I have the geocodeing api take a given postalcode and a city and return one result with the lat and lon values
+// I have the geocodeing api take a given postalcode and a city and return one result with the lat and lon values,
 // My goal is now to get those two values and use them in the place finding api to get locations in the area.

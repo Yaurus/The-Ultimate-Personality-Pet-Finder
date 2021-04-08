@@ -2,30 +2,45 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="quizstyle.css" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="./assets/quizstyle.css" />
+    <title>Pet Finder</title>
 </head>
 <body>
 
         <!---Question 1-->
     <section class = "question1 shown">
-        <h1 class="Qt1"> Do you live in a large apartment?</h1>
-        <button class="yes" onclick="Yesanswer1()" value="1" >Yes</button>
-        <button class="no" onclick="Noanswer1()" value="0">No</button>
+        <h1 class="Qt1"> Do you have another pet at home?</h1>
+        <button class="response" onclick="question1(1)" data-value="1" >Yes</button>
+        <button class="response" onclick="question1(0)" data-value="0">No</button>
 
     </section>
 
     <!---Question 2-->
     <section class = "question2 hidden">
-        <h1 class="Qt2">Do you have a backyard?</h1>
-        <button class="yes2" onclick="Yesanswer2()" value="1">Yes</button>
-        <button class="no2" onclick="Noanswer2()" value="0" name="2">No</button>
+        <h1 class="Qt2">Do you have a child?</h1>
+        <button class="response2" onclick="question2(1)" data-value="1">Yes</button>
+        <button class="response2" onclick="question2(0)" data-value="0" name="2">No</button>
+    </section>
+
+    <!---Question 3-->
+    <section class = "question3 hidden">
+        <h1 class="Qt3">Do you prefer an older or younger dog?</h1>
+        <button class="response3" onclick="question3(1)" data-value="1">Old</button>
+        <button class="response3" onclick="question3(0)" data-value="0" name="2">Young</button>
+    </section>
+
+    <!---Question 4-->
+    <section class = "question4 hidden">
+        <h1 class="Qt4">Are you willing to adopt a special needs pet?</h1>
+        <button class="response3" onclick="question4(1)" data-value="1">Yes</button>
+        <button class="response3" onclick="question4(0)" data-value="0" name="2">No</button>
     </section>
     
 </body>
 
 <!---JS Files-->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!--<script src="assets/scriptlocation.js"></script>-->
 <script src="./assets/scriptquiz.js"></script>
 </html>
