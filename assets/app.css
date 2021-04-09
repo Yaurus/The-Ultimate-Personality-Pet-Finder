@@ -21,10 +21,9 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     display: grid;
-  
   }
 
-  h1{
+h1{
     display: block;
     width: 100%;
     color: white;
@@ -33,7 +32,7 @@ body {
 
 .petBlock {
   padding: 15px;
-  max-width: 50%;
+  max-width: 45%;
   margin: auto;
 }
 
@@ -73,4 +72,13 @@ body {
   color: white;
   background-image: linear-gradient(rgb(111, 0, 255), rgb(0, 47, 255));
   text-decoration: none;
+}
+
+@media (min-width: 600px) {
+  .petBlock {
+    padding: 15px;
+    max-width: 45%;
+    margin: auto;
+    float: left;
+  }
 }
