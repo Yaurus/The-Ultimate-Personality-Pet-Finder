@@ -31,10 +31,23 @@ h1{
     font-size: 40px;
   }
 
+  h2{
+    display: block;
+    width: 100%;
+    color: white;
+    margin: auto;
+    font-size: 10px;
+    padding: 20px;
+  }
+
+.petsSection{
+  align-content: center;
+  margin-left: 60px;
+}
+
 .petBlock {
   padding: 15px;
   max-width: 43%;
-  margin: auto;
 }
 
 .petPic{
@@ -79,17 +92,22 @@ h1{
   .petBlock {
     padding: 15px;
     max-width: 45%;
-    margin: auto;
     float: left;
   }
-  
+  .petsSection{
+    align-content: center;
+    margin-left: 20px;
+  }
 }
 
 @media (min-width: 900px) {
   .petBlock {
     padding: 15px;
     max-width: 40%;
-    margin-left: auto;
     float: left;
+  }
+  .petsSection{
+    align-content: center;
+    margin-left: 190px;
   }
 }
